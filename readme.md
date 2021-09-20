@@ -14,7 +14,7 @@ proyecto desarrollado bajo los lineamientos presentados por parte de **Mision TI
 
 ## 1. Descripción del proyecto
 
-El programa de Mision Tic Ciclo 3 - Desarrollo de Software, propone analizar, diseñar y construir una aplicación software que permita controlar las ventas físicas y virtuales de una empresa de manufactura y hacerles el correspondiente seguimiento.
+El programa de Mision Tic Ciclo 3 - Desarrollo de Software (Universidad de Antioquia), propone analizar, diseñar y construir una aplicación software que permita controlar las ventas físicas y virtuales de una empresa de manufactura y hacerles el correspondiente seguimiento.
 
 ## 2. Alcance del proyecto
 
@@ -48,8 +48,8 @@ El programa de Mision Tic Ciclo 3 - Desarrollo de Software, propone analizar, di
 
 Proyecto desarrollado por:
 
-* **Darío Díaz** [Github](https://github.com/)
-* **Luisa Vidal** [Github](https://github.com/lvidala)
-* **Johan Guerrero** [Github](https://github.com/Johanguerrero)
+* **Darío Díaz** (DarioFDiaz) [Github](https://github.com/)
+* **Luisa Vidal** (lvidala) [Github](https://github.com/lvidala)
+* **Johan Guerrero** (Johanguerrero) [Github](https://github.com/Johanguerrero)
 * **Luisa Fernanda Perez** [Github](https://github.com/)
-* **Lian Katherin Guevara** [Github](https://github.com/lkguevara)
+* **Lian Katherin Guevara** (lkguevara) [Github](https://github.com/lkguevara)
