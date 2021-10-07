@@ -1,0 +1,319 @@
+/* Navegación Home */
+.routeNav{
+  display: flex;
+  padding-left:20px;
+  margin-bottom: 20px;
+}
+
+.routeNav a img{
+  margin: 15px;
+  align-items: center;
+  width: 20px;
+}
+
+/* Header de venta */
+
+.headerFactura__date{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-bottom: 1px solid #142E38;
+}
+
+.headerFactura__fecha,
+.headerFactura__id{
+  margin: 5px 0;
+}
+
+.mainFactura{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 0.5px solid gray;
+
+}
+
+.mainFacturaUser{
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px;
+
+}
+
+.mainFacturaUser input{
+  height:25px;
+  text-align: center;
+  margin: auto 0;
+  border-radius: 5px;
+  border-bottom: 2px solid #7AB7CF;
+  border: 1px solid #7AB7CF;
+  
+}
+
+/*  */
+
+.headerFactura{
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  width:90%;
+  margin: auto;
+  border-radius: 5px;
+  margin-bottom: 60px;
+  
+}
+
+.addProduct{
+  margin: 30px;
+  width:90%;
+  height:90px;
+  display: flex;
+  justify-content:space-evenly;
+  margin: auto;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
+  background-color: #97BFAF;
+  
+} 
+
+.addProductColum{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.listSales{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  padding:20px 50px;
+  border-radius: 10px;
+  background-color: #ddfff18a;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  
+} 
+
+.listSaleColum{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+
+.listSaleColum input{
+  width: 75%;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 3px;
+  border-bottom: 2px solid #7AB7CF;
+  border: 1px solid #7AB7CF;
+}
+
+.listSaleColum__Estado{
+  margin: 0;
+}
+
+
+/* .listSalerow{
+  margin: 60px;
+
+} */
+
+
+/* Maestro venta */
+.maestroVenta{
+  background-color: #015D61;
+  color: white;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  width:75%;
+  margin: auto;
+  border-radius:10px;
+  margin-bottom: 50px;
+}
+
+.HeaderMaestro{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-top: 1px solid #142E38;
+}
+
+.RegisterSale p{
+  margin: 5px 0;
+}
+.optionFilter{
+  border-radius: 5px;
+  width: 30px;
+  margin: 0 10px;
+}
+
+.SaleAdd{
+  margin: auto 0;
+}
+
+.SaleAdd a{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #142E38;
+  border-radius: 10px;
+  height: 15px;
+  padding: 10px;
+  margin: auto 0;
+  text-decoration: none;
+  color: white;
+}
+
+.SaleAdd p{
+  margin: 0;
+  width: 100%;
+  padding: 5px;
+}
+
+.editSale{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  
+}
+
+
+.editSale img{
+  margin-top: 24px;
+}
+
+
+.deleteSale{
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  
+}
+
+.deleteSale img{
+  margin-bottom: 35px;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+}
+
+.button {
+  background: #318161;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  color: white;
+  padding: 7px 20px;
+  cursor: pointer;
+  margin-top: 250px;
+}
+
+@media screen and (min-width: 320px){
+  
+  .mainFacturaUser{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mainFacturaUser input{
+    height:15px;
+    width: 150px;
+    margin: 10px 0;
+  }
+
+  .HeaderMaestro{
+    padding:0 5px;
+  }
+
+  .listSales{
+    padding: 0 10px;
+    width: 250px;
+  }
+
+  .listSaleColum input{
+    width: 70%;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 3px;
+    border-bottom: 2px solid #7AB7CF;
+    border: 1px solid #7AB7CF;
+  }
+
+  .listSale label{
+    margin-top:60px;
+    
+  }
+
+  #status{
+    display: none;
+  }
+
+  .editSale img{
+    margin: 15px 5px 0 ;
+  }
+
+}
+
+@media screen and (min-width: 425px){
+  
+  .mainFacturaUser input{
+    height:15px;
+    width: 190px;
+    margin: 10px 20px;
+  }
+
+  .HeaderMaestro{
+    padding:0 15px;
+  }
+
+  .listSales{
+    padding: 20px;
+    width: 350px;
+  }
+
+  .listSaleColum input{
+    width: 80%;
+    
+  }
+ 
+}
+
+@media screen and (min-width: 767px){
+  .mainFacturaUser input{
+    width: 110px;
+    margin: 10px 0px;
+    flex-wrap: none;
+  }
+
+  .HeaderMaestro{
+    padding:0 25px;
+  }
+
+  .listSales{
+    width: 500px;
+  }
+
+  #status{
+    display: flex;
+  }
+  
+}
+
+@media screen and (min-width: 1024px){
+  .mainFacturaUser input{
+    height:25px;
+    width: 170px;
+  }
+  .HeaderMaestro{
+    padding:0 35px;
+  }
+
+  .listSales{
+    min-width: 65%;
+    max-width: 100%;
+  }
+  
+}
+
