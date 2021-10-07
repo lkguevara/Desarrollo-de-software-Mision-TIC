@@ -1,14 +1,13 @@
-import React, {useState} from "react";
+mport React, {useState} from "react";
 import ReactDOM from "react-dom";
 import Carousel from "react-elastic-carousel";
-import { ProductsContainer, ProductsWrapper, Title1, Subtitle, Item, ItemIcon, Illu} from "./Item";
+import { ProductsContainer, ProductsWrapper, Title1, Subtitle, Item, ItemIcon} from "./Item";
 import Logo1 from '../../images/Leche.jpg';
 import Logo2 from '../../images/Yogurt.png';
 import Logo3 from '../../images/Queso.jpg';
 import Logo4 from '../../images/Helado.jpg';
 import Logo5 from '../../images/Mantequilla.jpg';
 import Logo6 from '../../images/Crema.jpg';
-// import Draw from '../../images/Draw.svg'
 import {Button} from '../Button';
 
 
@@ -27,10 +26,10 @@ const Slider = () => {
   };
   return (
     <>
-    <ProductsContainer id='productos'>
+    <ProductsContainer >
       <Title1> Conoce lo mejor de la semana </Title1>
+      <Subtitle> Tenemos una amplia variedad de productos para ti</Subtitle>
       <ProductsWrapper> 
-      {/* <Illu src={Draw} />; */}
         <Carousel breakPoints={breakPoints}>
           <Item>
           <ItemIcon src={Logo1}></ItemIcon>
