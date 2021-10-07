@@ -6,7 +6,7 @@ border-radius: 30px;
 background: #318158;
 padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
 font-size: 20px;
-width: 200px;
+width: 280px;
 outline: none;
 border: none;
 cursor: pointer;
