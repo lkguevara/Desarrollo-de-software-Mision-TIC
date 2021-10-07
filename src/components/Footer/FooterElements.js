@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
 background-color: #1c2237;
-/* background: radial-gradient(circle, rgba(92,39,251,1) 0%, rgba(112,71,247,1) 100%); */
 `;
 
 export const FooterWrap = styled.div`
@@ -61,20 +60,6 @@ justify-content: center;
 align-items: center;
 font-size: 30px;
 color: #fff;
-`
-
-export const FooterIcon1 = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-font-size: 20px;
-color: #fff;
-width: 60px;
-grid-gap: 45px;
-box-sizing: border-box;
-margin-top: 72px;
-
 `
 
 export const FooterText = styled.h2`
