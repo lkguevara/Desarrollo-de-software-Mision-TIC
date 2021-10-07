@@ -66,14 +66,19 @@ export const Stepsh1 = styled.h1`
 font-size: 2.5rem;
 color: black;
 margin-bottom: 64px;
+line-height: 1.1;
+font-weight: 600;
 
 @media screen and (max-width: 480px) {
     font-size: 2rem;
 }
 `
 export const Stepsh2 = styled.h2`
-font-size: 1.2rem;
-margin-bottom: 20px;
 color: black;
-text-align: end;
+font-size: 12px;
+line-height: 16px;
+font-weight: 700;
+letter-spacing: 1.0px;
+text-transform: uppercase;
+
 `
