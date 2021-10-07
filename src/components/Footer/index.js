@@ -1,30 +1,23 @@
 import React from 'react'
 import {FooterContainer, FooterWrap, FooterTextContainer, FooterTextWrapper, FooterItems, FooterTitle,
-FooterText,FooterIcon, FooterIcon1} from './FooterElements'
+FooterText,FooterIcon} from './FooterElements'
 import {FaCcVisa, 
     FaPaypal, 
     FaApplePay, 
     FaCcMastercard,
      FaCcAmazonPay, 
      FaCcDinersClub, 
-     FaPhone,
-    FaMap,
-FaMicroblog} from 'react-icons/fa';
+    } from 'react-icons/fa';
 
 const Footer = () => {
     return(
 
         <>
-<FooterContainer>
+<FooterContainer id= 'contactenos'>
 <FooterWrap>
 <FooterTextContainer>
 
 <FooterTextWrapper>
-<FooterIcon1>
-   <FaPhone />
-   <FaMap />
-   <FaMicroblog />
-   </FooterIcon1>
 <FooterItems>
 <FooterTitle>Información de contacto</FooterTitle>
     <FooterText>Teléfono: +1 (877) 747-9986</FooterText>
