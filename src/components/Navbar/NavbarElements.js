@@ -40,17 +40,6 @@ font-weight: bold;
 text-decoration: none;
 `;
 
-// export const NavIcon = styled.div`
-// justify-self: flex-start;
-// cursor: pointer;
-// font-size: 2rem;
-// display: flex;
-// align-items: center;
-// margin-left: 30px;
-// font-weight: bold;
-// text-decoration: none;
-// `
-
 export const MobileIcon = styled.div`
 display: none;
 
@@ -79,8 +68,43 @@ margin-right: -22px;
 `
 
 export const NavItem = styled.li`
-height: 80px;
 `
+
+export const DropDown = styled.div`
+position: relative;
+display: inline-block;
+
+&:hover {
+    display: block;
+    >div{
+        display:block;
+    }
+}
+`
+export const DropDownIcon = styled.div`
+display: inline-block;
+padding: 0px 10px;
+top: 3px;
+right: -28px;
+color: #fff;
+position: absolute;
+
+`
+
+export const DropDownContent = styled.div`
+background: #1c2237;
+display: none;
+position: absolute;
+min-width: 220px;
+padding: 22px 16px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 2);
+z-index: 1;
+
+
+`
+
+
+
 export const NavLinks = styled(LinkS)`
 color: #fff;
 display: flex;
@@ -103,8 +127,6 @@ cursor: pointer;
 export const NavBtn = styled.nav`
 display: flex;
 align-items: center;
-
-
 
 @media screen and (max-width: 768px) {
     display: none;
