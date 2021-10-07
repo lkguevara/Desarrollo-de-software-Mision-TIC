@@ -1,4 +1,4 @@
-mport React, {useState} from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom";
 import Carousel from "react-elastic-carousel";
 import { ProductsContainer, ProductsWrapper, Title1, Subtitle, Item, ItemIcon} from "./Item";
