@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 export const ProductsContainer = styled.div`
 color: #fff;
-height: 650px;
+height: 700px;
 
 @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -15,10 +15,6 @@ height: 650px;
 
 `
 
-// export const Illu = styled.img`
-// height: 50px;
-// width: 100%;
-// `
 
 export const ProductsWrapper = styled.div`
 display: box;
@@ -64,20 +60,28 @@ border: 1px outset lightgray;
 `
 
 export const Title1 = styled.h1`
- font-size: 2.5rem;
+
 color: black;
-margin-bottom: 64px;
 text-align: center;
+line-height: 16px;
+font-weight: 700;
+letter-spacing: 1.4px;
+text-transform: uppercase;
+margin-bottom: 26px;
+margin-top: 26px;
 @media screen and (max-width: 768px) {
 }
 `
 
 export const Subtitle = styled.h2`
- font-size: 1.5rem;
-color: black;
+ font-size: 1.2rem;
 text-align: center;
+color: #318158;
 margin-bottom: 30px;
 margin-left: -10px;
+line-height: 24px;
+font-weight: 700;
+letter-spacing: 1.0px;
 @media screen and (max-width: 768px) {
 }
 `
