@@ -1,6 +1,6 @@
 import React from 'react';
 import {FaBars} from 'react-icons/fa';
-// import image1 from '../images/Vacalogo.png';
+import {BiDownArrow} from 'react-icons/bi'
 import {
     Nav, 
     NavbarContainer, 
@@ -9,10 +9,13 @@ import {
      NavMenu, 
      NavItem, 
      NavLinks,
+     DropDown,
+     DropDownContent,
+     DropDownIcon,
      NavBtn,
      NavBtn2,
      NavBtnLink,
-    //  NavIcon
+
     } from './NavbarElements';
 
 
@@ -20,29 +23,32 @@ const Navbar = ({ toggle }) => {
     return (
       <>
 
-      <Nav>
+     <Nav>
           <NavbarContainer>
               <NavLogo to='/'>Látiz</NavLogo>
               <MobileIcon onClick={toggle}>
                   <FaBars />
-              </MobileIcon> o
+              </MobileIcon> 
+
               <NavMenu>
-              <NavItem>
+                <DropDown>
                       <NavLinks to ='home'>Home</NavLinks>
-                  </NavItem>
+                      <DropDownIcon onClick={toggle}>
+                          <BiDownArrow />
+                       </DropDownIcon>
+                      <DropDownContent>
+                          <NavLinks to ='sobrenosotros'>Sobre nosotros</NavLinks>
+                          <NavLinks to ='descubre'>Descubre</NavLinks>
+                          <NavLinks to ='contactenos'>Contáctenos</NavLinks>
+                       </DropDownContent>
+                 </DropDown>
+               </NavMenu>
+
+
+                  <NavMenu>
                   <NavItem>
-                      <NavLinks to ='sobrenosotros'>Sobre nosotros</NavLinks>
+                      <NavLinks to ='/productos'>Productos</NavLinks>
                   </NavItem>
-                  <NavItem>
-                      <NavLinks to ='descubre'>Descubre</NavLinks>
-                  </NavItem>
-                  <NavItem>
-                      <NavLinks to ='productos'>Productos</NavLinks>
-                  </NavItem>
-                  <NavItem>
-                      <NavLinks to ='contactenos'>Contáctenos</NavLinks>
-                  </NavItem>
-                
               </NavMenu>
               <NavBtn>
                   <NavBtnLink to ='/signin'>Sign In</NavBtnLink>
