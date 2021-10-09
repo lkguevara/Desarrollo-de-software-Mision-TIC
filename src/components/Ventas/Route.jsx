@@ -9,6 +9,7 @@ const Route = (props) => {
                 <img src= {Home} alt="Home" />
             </ Link>
             <h3>{props.route}</h3>
+            
         </div>
     )
 }
