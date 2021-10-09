@@ -255,7 +255,9 @@ button {
   color: white;
   padding: 7px 20px;
   cursor: pointer;
-  margin-top: 250px;
+  position: absolute;
+  right:200px;
+  margin-top: 25px;
 }
 
 @media screen and (min-width: 320px){
@@ -383,6 +385,12 @@ button {
     width: 80%;
     
   }
+
+  .button {
+    position: absolute;
+    right:50px;
+    margin-top: 25px;
+  }
  
 }
 
@@ -409,6 +417,11 @@ button {
   #status{
     display: flex;
   }
+
+  .button {
+    position: absolute;
+    right:150px;
+  }
   
 }
 
@@ -434,6 +447,11 @@ button {
     height: 28px;
     text-align: center;
     width: 60%;
+  }
+
+  .button {
+    position: absolute;
+    right:250px;
   }
   
 }
