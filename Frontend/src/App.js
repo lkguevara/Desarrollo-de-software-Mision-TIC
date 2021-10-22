@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router} from "react-router-dom";
-import Home from "./Pages";
-import MaestroVenta from "./Pages/SaleMaster/index";
-import AgregarVenta from "./Pages/SaleAdd/index";
-import EditarVenta from "./Pages/SaleUpdate/index";
+import Home from "./Pages/home/index";
+import MaestroVenta from "./Pages/sales/SaleMaster";
+import AgregarVenta from "./Pages/sales/SaleAdd";
+import EditarVenta from "./Pages/sales/SaleUpdate";
 import './App.css';
 
 
