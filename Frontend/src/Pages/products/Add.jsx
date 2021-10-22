@@ -4,7 +4,7 @@ import "../../styles/Ventas/text.css"
 import RutaNav from "../../components/Ventas/Route"
 import { Link } from 'react-router-dom';
 
-const AgregarVenta = () => {
+const AgregarProducto = () => {
     return (
         <div>
            <RutaNav route="/ Agregar Producto"/>
@@ -37,4 +37,4 @@ const AgregarVenta = () => {
     )
 }
 
-export default AgregarVenta
+export default AgregarProducto

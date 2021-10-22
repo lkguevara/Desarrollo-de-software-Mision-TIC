@@ -9,6 +9,8 @@ import EditarVenta from "./Pages/sales/SaleUpdate";
 import AgregarProducto from "./Pages/products/Add";
 import MaestroProductos from "./Pages/products/Master";
 import ActualizarProducto from "./Pages/products/Update";
+import MaestroUsuarios from "./Pages/users/Master";
+import ActualizarUsuario from "./Pages/users/Update";
 import './App.css';
 
 
@@ -43,6 +45,18 @@ function App() {
                 </Route>
                 <Route path='/product/update'>
                   <ActualizarProducto />
+                </Route>
+              </Switch>
+            </PrivateLayout>
+          </Route>
+          <Route path={['/user/master', '/user/update']}>
+            <PrivateLayout>
+              <Switch>
+                <Route path='/user/master'>
+                  <MaestroUsuarios />
+                </Route>
+                <Route path='/user/update'>
+                  <ActualizarUsuario />
                 </Route>
               </Switch>
             </PrivateLayout>

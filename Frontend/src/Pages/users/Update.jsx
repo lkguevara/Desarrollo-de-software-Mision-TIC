@@ -7,23 +7,23 @@ import Edit from "../../images/Ventas/edit.svg"
 import Delete from "../../images/Ventas/delete.svg"
 import { Link } from 'react-router-dom';
 
-const EditarProducto = () => {
+const EditarVenta = () => {
     return (
         <div>
-           <RutaNav route="/ Editar Producto"/>
+           <RutaNav route="/ Editar Usuario"/>
            <div className="AddProduct">
-                <Link to="/product/master">
-                    <p>Maestro Productos</p>
+                <Link to="/user/master">
+                    <p>Maestro Usaurios</p>
                 </Link>
             </div>
             <input className="search" placeholder='Buscar'/>
            <div className="textAddProduct">
-                <h2>Formulario para actualizar un producto</h2>
+                <h2>Formulario para actualizar un usuario</h2>
            </div>
 
             <form className="listSales">
-                <div className="listSaleColum">
-                    <SalesList item="ID Producto" date="Id de producto"/>
+            <div className="listSaleColum">
+                    <SalesList item="ID Usuario" date="Id de usuario"/>
                 </div>
 
                 <div className="listSaleColum">
@@ -32,15 +32,11 @@ const EditarProducto = () => {
 
 
                 <div className="listSaleColum">
-                    <SalesList item="Marca" date="Marca"/>
+                    <SalesList item="Apellido" date="Apellido"/>
                 </div>
 
                 <div className="listSaleColum">
-                    <SalesList item="Tamaño" date="Tamaño"/>    
-                </div>
-
-                <div id="status" className="listSaleColum">
-                    <SalesList item="Precio" date="Precio"/>    
+                    <SalesList item="Rol de usuario" date="Rol"/>    
                 </div>
                 
 
@@ -73,4 +69,4 @@ const EditarProducto = () => {
     )
 }
 
-export default EditarProducto
+export default EditarVenta

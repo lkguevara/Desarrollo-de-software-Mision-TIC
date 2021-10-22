@@ -7,7 +7,7 @@ import Edit from "../../images/Ventas/edit.svg"
 import Add from "../../images/Ventas/add.svg"
 import { Link } from 'react-router-dom';
 
-const MaestroVenta = () => {
+const MaestroProdutos = () => {
     return (
         <div>
            <RutaNav route="/ Maestro de Productos"/>
@@ -82,4 +82,4 @@ const MaestroVenta = () => {
     )
 }
 
-export default MaestroVenta
+export default MaestroProdutos
