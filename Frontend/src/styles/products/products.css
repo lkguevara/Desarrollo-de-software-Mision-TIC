@@ -31,6 +31,15 @@
   
 } 
 
+/* Maestro productos  */
+
+.search{
+  border-radius: 10px;
+  height: 30px;
+  font-size:15px;
+  text-align: center;
+  margin: 10px;
+}
 .listSaleColum{
   display: flex;
   flex-direction: column;
@@ -104,7 +113,7 @@
   align-items: center;
   background-color: #142E38;
   border-radius: 10px;
-  height: 15px;
+  height: 30px;
   padding: 10px;
   margin: auto 0;
   text-decoration: none;

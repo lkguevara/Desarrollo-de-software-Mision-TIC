@@ -2,10 +2,6 @@ import React from 'react'
 import "../../styles/products/products.css"
 import "../../styles/Ventas/text.css"
 import RutaNav from "../../components/Ventas/Route"
-import SalesList from "../../components/Ventas/SalesList"
-import SalesHeader from "../../components/Ventas/SalesHeader"
-import Edit from "../../images/Ventas/edit.svg"
-import Add from "../../images/Ventas/add.svg"
 import { Link } from 'react-router-dom';
 
 const AgregarVenta = () => {
@@ -13,7 +9,7 @@ const AgregarVenta = () => {
         <div>
            <RutaNav route="/ Agregar Producto"/>
            <div className="AddProduct">
-                <Link to="/">
+                <Link to="/product/master">
                     <p>Maestro Productos</p>
                 </Link>
             </div>
