@@ -6,6 +6,9 @@ import PublicLayout from './layouts/PublicLayout';
 import MaestroVenta from "./Pages/sales/SaleMaster";
 import AgregarVenta from "./Pages/sales/SaleAdd";
 import EditarVenta from "./Pages/sales/SaleUpdate";
+import AgregarProducto from "./Pages/products/Add";
+import MaestroProductos from "./Pages/products/Master";
+import ActualizarProducto from "./Pages/products/Update";
 import './App.css';
 
 
@@ -25,6 +28,21 @@ function App() {
                 </Route>
                 <Route path='/sales/saleUpdate'>
                   <EditarVenta />
+                </Route>
+              </Switch>
+            </PrivateLayout>
+          </Route>
+          <Route path={['/product/add', '/product/master', '/product/update']}>
+            <PrivateLayout>
+              <Switch>
+                <Route path='/product/add'>
+                  <AgregarProducto />
+                </Route>
+                <Route path='/product/master'>
+                  <MaestroProductos />
+                </Route>
+                <Route path='/product/update'>
+                  <ActualizarProducto />
                 </Route>
               </Switch>
             </PrivateLayout>

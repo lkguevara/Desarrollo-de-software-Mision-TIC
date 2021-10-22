@@ -1,74 +1,10 @@
-/* Navegación Home */
-.routeNav{
-  display: flex;
-  padding-left:20px;
-  margin-bottom: 20px;
-}
-
-.routeNav h3{
-  margin: 15px;
-  align-items: center;
-}
-
-.routeNav a img{
-  margin: 15px 0;
-  align-items: center;
-  width: 20px;
-}
-
-/* Header de venta */
-
-.headerFactura__date{
-  display: flex;
-  justify-content: space-between;
-  padding: 0 30px;
-  border-bottom: 1px solid #142E38;
-}
-
-.headerFactura__fecha,
-.headerFactura__id{
-  margin: 5px 0;
-}
-
-.mainFactura{
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 0.5px solid gray;
-
-}
-
-.mainFacturaUser{
-  display: flex;
-  justify-content: space-around;
-  padding: 0 10px;
-
-}
-
-.mainFacturaUser input{
-  height:25px;
-  text-align: center;
-  margin: auto 0;
-  border-radius: 5px;
-  border-bottom: 2px solid #7AB7CF;
-  border: 1px solid #7AB7CF;
-  
-}
-
-/*  */
-
-.headerFactura{
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-  width:90%;
-  margin: auto;
-  border-radius: 5px;
-  margin-bottom: 60px;
-  
-}
+/* Agregar productos */
 
 .addProduct{
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  flex-direction: column;
+  max-width: 30%;
   margin: auto;
   padding:20px 50px;
   border-radius: 10px;
@@ -79,26 +15,8 @@
 
 .addProduct input{
   border-radius: 10px;
-  height: 30px;
+  height: 50px;
   text-align: center;
-}
-
-.TotalVenta{
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
-  margin: auto;
-  padding:50px;
-  border-radius: 10px;
-  background-color: #015c6169;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-} 
-
-.TotalVenta input{
-  border-radius: 10px;
-  height: 28px;
-  text-align: center;
-  width: 60%;
 }
 
 .listSales{
@@ -118,7 +36,6 @@
   flex-direction: column;
   text-align: center;
 }
-
 
 
 .listSaleColum input{
@@ -153,14 +70,6 @@
   padding: 10px 0;
 }
 
-.HeaderMaestro{
-  display: flex;
-  justify-content: space-around;
-  padding: 0 30px;
-  border-top: 1px solid #142E38;
-}
-
-
 .RegisterSale p{
   margin: 5px 0;
 }
@@ -172,15 +81,6 @@
 
 .SaleAdd{
   margin: auto 0;
-  padding:50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.AgregarVenta{
-  display: flex;
-  justify-content: space-between
-
 }
 
 .AgregarProducto a{
@@ -198,45 +98,44 @@
 
 
 
-.SaleAdd, .SaleAdd__register a{
+.SaleAdd{
   display: flex;
   justify-content:space-between;
   align-items: center;
   background-color: #142E38;
   border-radius: 10px;
   height: 15px;
-  padding: 15px;
+  padding: 10px;
   margin: auto 0;
   text-decoration: none;
   color: white;
-  /* max-width: 50px; */
 }
 
+.AddProduct a{
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 0;
+  margin-right: 50px;
+  background-color: #142E38;
+  border-radius: 10px;
+  width: 10%;
+  padding: 5px;
+  text-align: center;
+  
+  
+}
 
-.SaleAdd__register a{
-  height: 30px;
-  margin-top: 10px;
-  
-  
+.textAddProduct{
+  text-align: center;
+  margin-bottom: 50px
 }
 
 .SaleAdd p{
   margin: 0;
-  width: 100px;
-  color: white;
-  margin: 5px 0 0 15px;
-  text-decoration: none;
+  width: 100%;
+  padding: 5px;
 }
-
-.SaleAdd__register a p{
-  margin: 0;
-  max-width: 150px;
-  color: white;
-  margin: 5px 0 0 15px;
-  text-decoration: none;
-  padding-bottom: 5px;
-}
-
 
 
 .editSale{
@@ -267,19 +166,26 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
-  display: flex;
+  
+  
 }
 
-.button {
+.buttonAdd {
   background: #318161;
   border: 1px solid var(--main-color);
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
-  padding: 7px 20px;
+  padding: 7px;
   cursor: pointer;
-  position: absolute;
-  right:200px;
+  width: 35%;
+  align-items: center;
+  margin: auto;
   margin-top: 25px;
+  
+}
+
+.buttonAdd p{
+  text-align: center;
 }
 
 @media screen and (min-width: 320px){
@@ -326,7 +232,7 @@ button {
   
   .addProduct input{
     border-radius: 10px;
-    height: 30px;
+    height: 40px;
     text-align: center;
     margin-top: 10px;
   }
