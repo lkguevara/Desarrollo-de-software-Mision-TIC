@@ -12,10 +12,15 @@ import ActualizarProducto from "./Pages/products/Update";
 import MaestroUsuarios from "./Pages/users/Master";
 import ActualizarUsuario from "./Pages/users/Update";
 import './App.css';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 
 function App() {
   return (
+    <Auth0Provider
+    domain="dev-55qtikdp.us.auth0.com"
+    clientId="gtjukzUT5LVQ8aWB9sMkj0pwPC3kjrgv"
+    redirectUri={window.location.origin}>
     <>
       <Router>
         <Switch>
@@ -69,6 +74,7 @@ function App() {
         </Switch>
       </Router>
     </>
+    </Auth0Provider>
   );
 }
 
