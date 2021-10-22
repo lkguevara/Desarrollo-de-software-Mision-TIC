@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import Sidebar from '../components/Sidebar';
-import Navbar from '../components/Navbar';
-import Slider from "../components/products/index";
-import InfoSection from '../components/InfoSection';
-import Steps from '../components/Steps';
-import { homeObjOne} from "../components/InfoSection/Data";
-import Footer from '../components/Footer';
+import Sidebar from '../components/Home/Navbar/Sidebar';
+import Navbar from '../components/Home/Navbar';
+import Slider from "../components/Home/Main/products/index";
+import InfoSection from './../components/Home/Main/InfoSection';
+import Steps from './../components/Home/Main/Steps';
+import { homeObjOne} from "./../components/Home/Main/InfoSection/Data";
+import Footer from './../components/Home/Footer';
 
 
 

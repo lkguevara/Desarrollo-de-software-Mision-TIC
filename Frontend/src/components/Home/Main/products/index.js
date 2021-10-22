@@ -2,13 +2,13 @@ import React, {useState} from "react";
 import ReactDOM from "react-dom";
 import Carousel from "react-elastic-carousel";
 import { ProductsContainer, ProductsWrapper, Title1, Subtitle, Item, ItemIcon} from "./Item";
-import Logo1 from '../../images/Leche.jpg';
-import Logo2 from '../../images/Yogurt.png';
-import Logo3 from '../../images/Queso.jpg';
-import Logo4 from '../../images/Helado.jpg';
-import Logo5 from '../../images/Mantequilla.jpg';
-import Logo6 from '../../images/Crema.jpg';
-import {Button} from '../../Button';
+import Logo1 from '../../../../images/Leche.jpg';
+import Logo2 from '../../../../images/Yogurt.png';
+import Logo3 from '../../../../images/Queso.jpg';
+import Logo4 from '../../../../images/Helado.jpg';
+import Logo5 from '../../../../images/Mantequilla.jpg';
+import Logo6 from '../../../../images/Crema.jpg';
+import {Button} from '../../../Button';
 
 
 const breakPoints = [
