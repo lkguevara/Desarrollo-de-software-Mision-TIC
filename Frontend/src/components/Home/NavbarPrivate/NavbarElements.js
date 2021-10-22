@@ -114,6 +114,7 @@ padding: 0 1rem;
 height: 100%;
 cursor: pointer;
 
+
 &.active {
     border-bottom: 3px solid #01bf71;
 }
@@ -143,11 +144,11 @@ margin-left: -40px;
 `
 
 export const NavBtnLink = styled(LinkR)`
-border-radius: 50px;
-background: #39A388;
+border-radius: 15px;
+background: white;
 white-space: nowrap;
 padding: 10px 22px;
-color: white;
+color: #010606;
 font-size: 16px;
 outline: none;
 border: none;
