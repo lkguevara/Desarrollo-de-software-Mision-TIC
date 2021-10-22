@@ -1,8 +1,16 @@
 import React from 'react'
+import Sidebar from '../components/Home/NavbarPrivate/index'
+import Footer from '../components/Home/Footer/index'
 
-const PrivateLayout = () => {
+const PrivateLayout = ({ children }) => {
     return (
-        <div>Autenticación</div>
+        <div>
+          <Sidebar />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </div>
     )
 }
 
