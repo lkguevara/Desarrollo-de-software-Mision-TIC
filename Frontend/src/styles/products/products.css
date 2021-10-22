@@ -197,6 +197,22 @@ button {
   text-align: center;
 }
 
+.buttonUpdate{
+  background: #318161;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  color: white;
+  padding: 7px;
+  cursor: pointer;
+  width: 10%;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.buttonUpdate p{
+  text-align: center;
+}
+
 @media screen and (min-width: 320px){
   
   .mainFacturaUser{

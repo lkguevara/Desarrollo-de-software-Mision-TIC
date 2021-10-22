@@ -12,34 +12,20 @@ import { Link } from 'react-router-dom';
 const EditarVenta = () => {
     return (
         <div>
-           <RutaNav route="/ Editar Venta"/>
-           <div className="maestroVenta">
-
-                <SalesHeader fecha="12 de octubre 2021" id="001" user="Vendedor" date1="ID vendedor" date2="Nombre vendedor" date3="Apellidos vendedor" />
-
-                
-                <div className="mainFacturaUser">
-                    <p>Cliente</p>
-                    <input placeholder= "ID Cliente"/>
-                    <input placeholder="Nombre Cliente"/>
-                    <input placeholder="Apellidos Cliente"/>
-                </div>
-                
-                
-                
-                <div className="HeaderMaestro">
-                    <div className="SaleAdd__register">
-                        <Link to="/">
-                            <img src={Add} height="25px" alt="AgregarVenta" />
-                            <p>Maestro Venta</p>
-                        </Link>
-                    </div>
-                </div>
+           <RutaNav route="/ Editar Producto"/>
+           <div className="AddProduct">
+                <Link to="/product/master">
+                    <p>Maestro Productos</p>
+                </Link>
             </div>
+            <input className="search" placeholder='Buscar'/>
+           <div className="textAddProduct">
+                <h2>Formulario para actualizar un producto</h2>
+           </div>
 
             <form className="listSales">
                 <div className="listSaleColum">
-                    <SalesList item="ID Producto" date="ID Producto"/>
+                    <SalesList item="ID Producto" date="Id de producto"/>
                 </div>
 
                 <div className="listSaleColum">
@@ -47,16 +33,16 @@ const EditarVenta = () => {
                 </div>
 
 
-                <div id="PrecioUnitario" className="listSaleColum">
-                    <SalesList item="Precio unitario" date="Precio unitario"/>
+                <div className="listSaleColum">
+                    <SalesList item="Marca" date="Marca"/>
                 </div>
 
                 <div className="listSaleColum">
-                    <SalesList item="Cantidad" date="Cantidad"/>    
+                    <SalesList item="Tamaño" date="Tamaño"/>    
                 </div>
 
                 <div id="status" className="listSaleColum">
-                    <SalesList item="Subtotal" date="Subtotal"/>    
+                    <SalesList item="Precio" date="Precio"/>    
                 </div>
                 
 
@@ -81,7 +67,9 @@ const EditarVenta = () => {
                 </div>
                 
             </form>
-            <button class="button">Guardar</button>
+            <button className="buttonUpdate">
+                <p>Guardar cambios</p>
+            </button>
             
         </div>
     )

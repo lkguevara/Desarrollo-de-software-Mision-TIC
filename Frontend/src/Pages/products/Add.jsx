@@ -17,7 +17,7 @@ const AgregarVenta = () => {
                 <h2>Formulario para agregar productos</h2>
            </div>
            
-            <form >
+           <form >
                 <div className="addProduct">
                     <input placeholder= "Nombre del producto"  required/> 
                     <input placeholder= "Marca"  required/> 

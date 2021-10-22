@@ -30,7 +30,7 @@ const MaestroVenta = () => {
 
                     </form>
                     <div className="SaleAdd">
-                        <Link to="/">
+                        <Link to="/product/add">
                             <div className="AgregarVenta"> 
                                 <img src={Add} height="25px" alt="AgregarVenta" />
                                 <p>Agregar un producto</p>
@@ -68,7 +68,7 @@ const MaestroVenta = () => {
                 
 
                 <div className="editSale">
-                    <Link to='./ActualizarVenta'>
+                    <Link to='/product/update'>
                         <img src= {Edit} height="20px" alt="" />
                         <img src= {Edit} height="20px" alt="" />
                         <img src= {Edit} height="20px" alt="" />
