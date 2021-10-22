@@ -1,19 +1,15 @@
 import React from 'react';
 import {FaBars} from 'react-icons/fa';
-import {BiDownArrow} from 'react-icons/bi'
+
+
 import {
     Nav, 
     NavbarContainer, 
     NavLogo, 
     MobileIcon,
      NavMenu, 
-     NavItem, 
-     NavLinks,
-     DropDown,
-     DropDownContent,
-     DropDownIcon,
      NavBtn,
-     NavBtn2,
+     NavLinks,
      NavBtnLink,
 
     } from './NavbarElements';
@@ -31,9 +27,9 @@ const Navbar = ({ toggle }) => {
               </MobileIcon> 
 
               <NavMenu>
-                    <NavLinks to ='/'>Productos</NavLinks>
-                    <NavLinks to ='/'>Ventas</NavLinks>
-                    <NavLinks to ='/'>Usuarios</NavLinks>
+                    <NavLinks to ='/product/master'>Productos</NavLinks>
+                    <NavLinks to ='/sales/saleMaster'>Ventas</NavLinks>
+                    <NavLinks to ='/user/master'>Usuarios</NavLinks>
                </NavMenu>
               <NavBtn>
                   <NavBtnLink to ='/signin'>Mi perfil</NavBtnLink>
