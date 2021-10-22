@@ -37,7 +37,7 @@ const AgregarVenta = () => {
             </div>
 
             <form >
-                <div className="addProduct">
+                <div className="addProductSale">
                     <input placeholder= "ID" required/> 
                     <input placeholder= "Nombre"  required/> 
                     <input placeholder= "Valor unitario"  required/> 

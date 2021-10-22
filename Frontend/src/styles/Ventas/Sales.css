@@ -83,6 +83,24 @@
   text-align: center;
 }
 
+.addProductSale{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  padding:20px 50px;
+  border-radius: 10px;
+  background-color: #015c6169;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  margin-bottom: 50px;
+} 
+
+.addProductSale input{
+  border-radius: 10px;
+  height: 30px;
+  text-align: center;
+}
+
 .TotalVenta{
   display: flex;
   justify-content: space-between;
@@ -332,6 +350,24 @@ button {
   }
 
   .AgregarProducto a{
+    margin-top: 10px;
+    
+  } 
+
+  .addProductSale{
+    width: 60%;
+    padding:20px;
+    flex-wrap: wrap;
+  } 
+  
+  .addProductSale input{
+    border-radius: 10px;
+    height: 30px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .addProductSale a{
     margin-top: 10px;
     
   } 
