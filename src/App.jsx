@@ -21,6 +21,7 @@ function App() {
     domain="dev-55qtikdp.us.auth0.com"
     clientId="gtjukzUT5LVQ8aWB9sMkj0pwPC3kjrgv"
     redirectUri={window.location.origin}>
+    audience="api-autenticacion-latiz"
     <>
       <Router>
         <Switch>
