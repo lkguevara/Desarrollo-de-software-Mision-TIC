@@ -4,7 +4,6 @@ import "../../styles/Ventas/text.css"
 import RutaNav from "../../components/Ventas/Route"
 import SalesList from "../../components/Ventas/SalesList"
 import Edit from "../../images/Ventas/edit.svg"
-import Add from "../../images/Ventas/add.svg"
 import { Link } from 'react-router-dom';
 
 const MaestroVenta = () => {

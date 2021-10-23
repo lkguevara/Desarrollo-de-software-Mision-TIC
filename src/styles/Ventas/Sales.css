@@ -300,6 +300,16 @@ button {
   margin-top: 25px;
 }
 
+.buttonSale {
+  background: #103526;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  color: white;
+  padding: 7px;
+  cursor: pointer;
+  
+}
+
 @media screen and (min-width: 320px){
   
   .mainFacturaUser{
