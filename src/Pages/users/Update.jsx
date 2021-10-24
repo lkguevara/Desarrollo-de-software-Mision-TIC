@@ -16,7 +16,7 @@ const EditarVenta = () => {
     
     const enviarBackend = () => {
         console.log(rol, estado);
-        toast.success("Producto agregado con éxito")
+        toast.success("Usuario actualizado con éxito")
     }
 
     return (

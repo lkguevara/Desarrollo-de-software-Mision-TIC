@@ -5,7 +5,7 @@ export const PrivateRoute = ({children}) => {
     const { isAuthenticated, isLoading} = useAuth0();
 
     if(isLoading) return <div>Loading...</div>
-}
+
     
     return isAuthenticated ? (
         <>{children}</>
