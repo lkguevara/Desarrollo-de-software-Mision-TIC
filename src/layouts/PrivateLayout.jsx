@@ -7,7 +7,7 @@ import { PrivateRoute } from 'components/PrivateRoute';
 const PrivateLayout = ({ children }) => {
   
     return (
-        <PrivateRoute>
+        //<PrivateRoute>
         <div>
           <Sidebar />
           <main>
@@ -15,7 +15,7 @@ const PrivateLayout = ({ children }) => {
           </main>
           <Footer />
         </div>
-        </PrivateRoute>
+        //</PrivateRoute>
     )
 }
 
