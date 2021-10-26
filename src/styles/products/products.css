@@ -60,11 +60,36 @@
   margin: 0;
 }
 
+.maestroProducto {
+  /* display: flex;
+  flex-direction: column; */
+  border-collapse: collapse;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
+}
 
-/* .listSalerow{
-  margin: 60px;
+.maestroProducto td{
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
 
-} */
+.cabeceraTabla{
+  background-color: #015c6169;
+}
+
+.maestroProducto tr:nth-child(even){background-color: #f2f2f2;}
+
+
+.maestroProducto th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
 
 
 /* Maestro venta */
@@ -177,6 +202,11 @@ button {
   cursor: pointer;
   
   
+}
+
+.editarProducto{
+  display: flex;
+  justify-content:space-between;
 }
 
 .buttonAdd {
