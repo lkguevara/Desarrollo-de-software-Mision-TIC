@@ -76,7 +76,7 @@ const MaestroProdutos = () => {
 
 
                 <tr className="cabeceraTabla">
-                    <td>Id Producto</td>
+                    {/* <td>Id Producto</td> */}
                     <td>Nombre</td>
                     <td>Marca</td>
                     <td>Tamano</td>
@@ -91,7 +91,7 @@ const MaestroProdutos = () => {
                                 <td>{product.mark}</td>
                                 <td>{product.Size}</td>
                                 <td>{product.price}</td>
-                                <Link to="/product/update">
+                                <Link to = {`/product/update/${product._id}`}>
                                 <img src= {Edit} height="20px" alt="" />
                                 </Link>
                                 

@@ -49,9 +49,7 @@ function App() {
                 <Route path='/product/master'>
                   <MaestroProductos />
                 </Route>
-                <Route path='/product/update'>
-                  <ActualizarProducto />
-                </Route>
+                <Route path='/product/update/:id' component={ActualizarProducto} />
               </Switch>
             </PrivateLayout>
           </Route>
