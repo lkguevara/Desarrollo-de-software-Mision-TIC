@@ -12,15 +12,23 @@ const EditarProducto = (props) => {
     const [producto, setProducto] = useState({})
     //los useeffect que estan suscritos a una lista vacia [] ocurren cuando el componente ya se cargo visualmente 1 vez
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`https://latzi-nodejs.herokuapp.com/products/${props.match.params.id}`)
-            const data = await response.json()
 
-            setProducto(data)
+        try{
+            const fetchData = async () => {
+                const response = await fetch(`https://latzi-nodejs.herokuapp.com/products/${props.match.params.id}`)
+                const data = await response.json()
+                
+                //si data es diferente de null -> seteear el dato del producto
+                //porq ue debe ser diferente porque, null.property = error
+                if(data !== null){
+                    setProducto(data)
+                }
+            }
+    
+            fetchData()
+        }catch(e){
+            toast.error('Lo siento tenemos un error, vuelve mas tarde')
         }
-
-        fetchData()
-
     }, [])
 
 
@@ -31,9 +39,12 @@ const EditarProducto = (props) => {
     }
     
 
-    const enviarBackend = async (e) => {
+    const updateProduct = async (e) => {
+
         e.preventDefault();
-        try{
+
+        try{      
+            
             const response = await fetch(`https://latzi-nodejs.herokuapp.com/products/edit/${props.match.params.id}`,{
                 method: 'PATCH',
                 headers: {
@@ -43,15 +54,41 @@ const EditarProducto = (props) => {
                 body: JSON.stringify(producto)
             })
 
-            const data = await response.json()
-            
-            toast.success("Producto actualizado con éxito")
+            await response.json()
+
+            toast.info('Todo melo!')
 
         }catch(e){
-            toast.error(`sorry ${e}`)
+            toast.error('Lo sentimos el servidor no esta disponible')
         }
-
+    
     }
+
+    const deleteProduct = async (e) => {
+
+        e.preventDefault();
+
+        try{      
+            
+            const response = await fetch(`https://latzi-nodejs.herokuapp.com/products/delete/${props.match.params.id}`,{
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+            })
+
+            await response.json()
+
+            toast.info('Todo melo!')
+
+        }catch(e){
+            toast.error('Lo sentimos el servidor no esta disponible')
+        }
+    
+    }
+
+
 
     return (
         <div>
@@ -65,23 +102,30 @@ const EditarProducto = (props) => {
                 <h2>Formulario para editar un producto</h2>
            </div>
            <ToastContainer position="bottom-center" autoClose={5000} />
-    
-           <form onSubmit={(e)=>{e.preventDefault()}}>
+
+            {
+                Object.entries(producto).length > 0 ?
                 <div className="addProduct">
-                    <input  placeholder= "Nombre del producto" name='Product' value={producto.Product} onChange={changeForm}/>  
-                    <input  placeholder= "Marca" name='mark' value={producto.mark} onChange={changeForm} /> 
-                    <input  placeholder= "Tamaño"  name='ServingSizes' value={producto.ServingSizes}onChange={changeForm}  /> 
-                    <input  placeholder= "Unidad" name='Size' value={producto.Size} onChange={changeForm} /> 
-                    <input  placeholder= "Precio" name='price' value={producto.price} onChange={changeForm} /> 
-                    
+
+                    <form >
+                        <input  placeholder= "Nombre del producto" name='Product' value={producto.Product} onChange={changeForm}/>  
+                        <input  placeholder= "Marca" name='mark' value={producto.mark} onChange={changeForm} /> 
+                        <input  placeholder= "Tamaño"  name='ServingSizes' value={producto.ServingSizes}onChange={changeForm}  /> 
+                        <input  placeholder= "Unidad" name='Size' value={producto.Size} onChange={changeForm} /> 
+                        <input  placeholder= "Precio" name='price' value={producto.price} onChange={changeForm} /> 
+                        
+                    </form >
+
                     <div className="editarProducto">
-                        <button className="buttonAdd" onclick={enviarBackend} ><p>Guardar cambios</p></button>
-                        <button className="buttonAdd" ><p>Eliminar producto</p></button>
+                        <button className="buttonAdd" name='buttonEdit' onClick={updateProduct}>Guardar cambios</button>
+                        <button className="buttonAdd" onClick={deleteProduct} >Eliminar producto</button>
                     </div>
-                    
-                </div>
                 
-            </form >
+                </div>
+                :
+                <h1 style={{margin:'150px auto', width:'90%', textAlign:'center'}}>El Producto no existe en la base de datos</h1>
+            }
+               
             
         </div>
     )

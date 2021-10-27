@@ -7,11 +7,7 @@ import Footer from '../components/Home/Footer/index'
 const PrivateLayout = ({ children }) => {
   
     return (
-<<<<<<< HEAD
         // <PrivateRoute>
-=======
-        //<PrivateRoute>
->>>>>>> 1f9b63dd94a4a0fb5dc1005abec814ea8efe53e4
         <div>
           <Sidebar />
           <main>
@@ -19,11 +15,7 @@ const PrivateLayout = ({ children }) => {
           </main>
           <Footer />
         </div>
-<<<<<<< HEAD
         // </PrivateRoute>
-=======
-        //</PrivateRoute>
->>>>>>> 1f9b63dd94a4a0fb5dc1005abec814ea8efe53e4
     )
 }
 

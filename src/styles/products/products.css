@@ -284,6 +284,14 @@ button {
     padding:20px;
     flex-wrap: wrap;
   } 
+
+  .addProduct > form{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
   
   .addProduct input{
     border-radius: 10px;

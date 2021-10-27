@@ -57,6 +57,8 @@ const Productos = () => {
             setNombre('')
             setMarca('')
             setPrecio('')
+            setTamano('')
+            setUnidad('')
             toast.success("Producto agregado con éxito")
 
         }catch(e){
