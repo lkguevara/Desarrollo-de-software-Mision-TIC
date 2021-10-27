@@ -56,7 +56,7 @@ const MaestroUsuarios = () => {
                                 <td>{usuario.name}</td>
                                 <td>{usuario.lastname}</td>
                                 <td>{usuario.rol}</td>
-                                <Link to = {`/user/update/${usuarios._id}`}>
+                                <Link to = {`/user/update/${usuario._id}`}>
                                 <img src= {Edit} height="20px" alt="" />
                                 </Link>
                                 

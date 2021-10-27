@@ -59,9 +59,7 @@ function App() {
                 <Route path='/user/master'>
                   <MaestroUsuarios />
                 </Route>
-                <Route path='/user/update'>
-                  <ActualizarUsuario />
-                </Route>
+                <Route path='/user/update/:id' component={ActualizarUsuario} />
               </Switch>
             </PrivateLayout>
           </Route>
