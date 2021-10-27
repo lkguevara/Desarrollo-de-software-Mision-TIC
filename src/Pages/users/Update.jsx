@@ -10,7 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const EditarVenta = () => {
+const EditarUsuario = () => {
     const [rol, setRol] = useState()
     const [estado, setEstado] = useState()
     
@@ -85,4 +85,4 @@ const EditarVenta = () => {
     )
 }
 
-export default EditarVenta
+export default EditarUsuario

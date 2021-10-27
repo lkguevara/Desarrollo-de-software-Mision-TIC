@@ -43,22 +43,11 @@ const MaestroProdutos = () => {
            
            <div className="maestroVenta">
 
-                <input className="search" placeholder='Buscar'/>
+                
                 <div className="HeaderMaestro">
                     <div className="RegisterSale">
-                        <p>Maestro de productos <p>4 Registros</p> </p>
+                        <input className="search" placeholder='Buscar'/>
                     </div>
-                    <form>
-                        <p>Filtrar por:
-                            <select className="optionFilter">
-                                <option></option>
-                                <option>ID producto</option>
-                                <option>Nombre producto</option>
-                            </select>
-                        </p>
-                        
-
-                    </form>
                     <div className="SaleAdd">
                         <Link to="/product/add">
                             <div className="AgregarVenta"> 

@@ -106,6 +106,8 @@
 
 .RegisterSale p{
   margin: 5px 0;
+  display: flex;
+  justify-content: space-between
 }
 .optionFilter{
   border-radius: 5px;
