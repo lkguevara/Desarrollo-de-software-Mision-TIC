@@ -225,6 +225,19 @@ button {
   
 }
 
+.buttonVenta{
+  background: #142E38;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  color: white;
+  padding: 7px;
+  cursor: pointer;
+  width: 10%;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+
 .buttonAdd p{
   text-align: center;
 }

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import "../../styles/Ventas/Sales.css"
 import "../../styles/Ventas/text.css"
 import RutaNav from "../../components/Ventas/Route"
@@ -11,90 +11,124 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const EditarVenta = () => {
-    const [IDProducto, setIDProducto] = useState()
-    const [nombre, setNombre] = useState()
-    const [cantidad, setCantidad] = useState()
-    const [subtotal, setSubtotal] = useState()
-    const [precio, setPrecio] = useState()
+const EditarVenta = (props) => {
+    const [venta, setVenta] = useState({})
+    //los useeffect que estan suscritos a una lista vacia [] ocurren cuando el componente ya se cargo visualmente 1 vez
+    useEffect(() => {
+
+        try{
+            const fetchData = async () => {
+                const response = await fetch(`https://latzi-nodejs.herokuapp.com/ventas/${props.match.params.id}`)
+                const data = await response.json()
+                
+                //si data es diferente de null -> seteear el dato del producto
+                //porq ue debe ser diferente porque, null.property = error
+                if(data !== null){
+                    setVenta(data)
+                }
+            }
     
-    const enviarBackend = () => {
-        console.log(IDProducto, nombre, cantidad, subtotal, precio);
-        toast.success("Producto actualizado con éxito")
+            fetchData()
+        }catch(e){
+            toast.error('Lo siento tenemos un error, vuelve mas tarde')
+        }
+    }, [])
+
+
+    const changeForm = (e)=>{
+        setVenta({...venta,[e.target.name]:e.target.value})
+        // console.log(e.target.name)
+        // setProducto({Product:e.target.value})
     }
+    
+
+    const updateProduct = async (e) => {
+
+        e.preventDefault();
+
+        try{      
+            
+            const response = await fetch(`https://latzi-nodejs.herokuapp.com/ventas/${props.match.params.id}`,{
+                method: 'PATCH',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(venta)
+            })
+
+            await response.json()
+
+            toast.info('Todo melo!')
+
+        }catch(e){
+            toast.error('Lo sentimos el servidor no esta disponible')
+        }
+    
+    }
+
+    const deleteProduct = async (e) => {
+
+        e.preventDefault();
+
+        try{      
+            
+            const response = await fetch(`https://latzi-nodejs.herokuapp.com/ventas/${props.match.params.id}`,{
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+            })
+
+            await response.json()
+
+            toast.info('Todo melo!')
+
+        }catch(e){
+            toast.error('Lo sentimos el servidor no esta disponible')
+        }
+    
+    }
+
+
 
     return (
         <div>
            <RutaNav route="/ Editar Venta"/>
-           <div className="maestroVenta">
-
-                <SalesHeader fecha="12 de octubre 2021" id="001" user="Vendedor" date1="ID vendedor" date2="Nombre vendedor" date3="Apellidos vendedor" />
-                <ToastContainer position="bottom-center" autoClose={5000} />
-                
-                <div className="mainFacturaUser">
-                    <p>Cliente</p>
-                    <input placeholder= "ID Cliente"/>
-                    <input placeholder="Nombre Cliente"/>
-                    <input placeholder="Apellidos Cliente"/>
-                </div>
-                
-                
-                
-                <div className="HeaderMaestro">
-                    <div className="SaleAdd__register">
-                        <Link to="/">
-                            <img src={Add} height="25px" alt="AgregarVenta" />
-                            <p>Maestro Venta</p>
-                        </Link>
-                    </div>
-                </div>
+           <div className="AddProduct">
+                <Link to="/Sales/master">
+                    <p>Maestro Ventas</p>
+                </Link>
             </div>
+           <div className="textAddProduct">
+                <h2>Formulario para editar una venta</h2>
+           </div>
+           <ToastContainer position="bottom-center" autoClose={5000} />
 
-            <form className="listSales">
-                <div className="listSaleColum">
-                    <SalesList item="ID Producto" date="ID Producto" onChange={(e)=>{setIDProducto(e.target.value)}}/>
-                </div>
+            {
+                Object.entries(venta).length > 0 ?
+                <div className="addProduct">
 
-                <div className="listSaleColum">
-                    <SalesList item="Nombre" date="Nombre" onChange={(e)=>{setNombre(e.target.value)}}/>
-                </div>
+                    <form >
+                        <input  placeholder= "Vendedor" name='Vendedor' value={venta.Vendedor} onChange={changeForm}/>  
+                        <input  placeholder= "Cliente" name='Cliente' value={venta.Cliente} onChange={changeForm} /> 
+                        <input  placeholder= "Total"  name='Total' value={venta.Total}onChange={changeForm}  /> 
+                        <input  placeholder= "Fecha" name='Fecha' value={venta.Fecha} onChange={changeForm} /> 
+                        <input  placeholder= "Estado" name='Estado' value={venta.Estado} onChange={changeForm} /> 
+                        
+                    </form >
 
-
-                <div id="PrecioUnitario" className="listSaleColum">
-                    <SalesList item="Precio unitario" date="Precio unitario" onChange={(e)=>{setPrecio(e.target.value)}}/>
-                </div>
-
-                <div className="listSaleColum">
-                    <SalesList item="Cantidad" date="Cantidad"  onChange={(e)=>{setCantidad(e.target.value)}}/>    
-                </div>
-
-                <div id="status" className="listSaleColum">
-                    <SalesList item="Subtotal" date="Subtotal" onChange={(e)=>{setSubtotal(e.target.value)}}/>    
-                </div>
+                    <div className="editarProducto">
+                        <button className="buttonAdd" name='buttonEdit' onClick={updateProduct}>Guardar cambios</button>
+                        <button className="buttonAdd" onClick={deleteProduct} >Eliminar venta</button>
+                    </div>
                 
-
-                
-
-                <div className="editSale">
-                    <Link to='./'>
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                    </Link>
                 </div>
-
-                <div className="editSale">
-                    <Link to='./'>
-                        <img src= {Delete} height="20px" alt="" />
-                        <img src= {Delete} height="20px" alt="" />
-                        <img src= {Delete} height="20px" alt="" />
-                        <img src= {Delete} height="20px" alt="" />
-                    </Link>
-                </div>
-                
-            </form>
-            <button class="button" onClick={()=>{enviarBackend()}}>Guardar</button>
+                :
+                <h1 style={{margin:'150px auto', width:'90%', textAlign:'center'}}>La venta no existe en la base de datos</h1>
+            }
+               
             
         </div>
     )

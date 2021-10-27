@@ -25,18 +25,16 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route path={['/sales/saleAdd', '/sales/saleMaster', '/sales/saleUpdate']}>
+          <Route path={['/sales/add', '/sales/master', '/sales/update']}>
             <PrivateLayout>
               <Switch>
-                <Route path='/sales/saleAdd'>
+                <Route path='/sales/add'>
                   <AgregarVenta />
                 </Route>
-                <Route path='/sales/saleMaster'>
+                <Route path='/sales/master'>
                   <MaestroVenta />
                 </Route>
-                <Route path='/sales/saleUpdate'>
-                  <EditarVenta />
-                </Route>
+                <Route path='/sales/update/:id' component={EditarVenta} />
               </Switch>
             </PrivateLayout>
           </Route>
