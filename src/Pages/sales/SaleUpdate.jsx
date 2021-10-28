@@ -18,7 +18,7 @@ const EditarVenta = (props) => {
 
         try{
             const fetchData = async () => {
-                const response = await fetch(`https://latzi-nodejs.herokuapp.com/ventas/${props.match.params.id}`)
+                const response = await fetch(`https://node-express-latiz.herokuapp.com/sales/${props.match.params.id}`)
                 const data = await response.json()
                 
                 //si data es diferente de null -> seteear el dato del producto
@@ -48,7 +48,7 @@ const EditarVenta = (props) => {
 
         try{      
             
-            const response = await fetch(`https://node-express-latiz.herokuapp.com/sales/${props.match.params.id}`,{
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/sales/edit${props.match.params.id}`,{
                 method: 'PATCH',
                 headers: {
                     'Accept': 'application/json',
@@ -73,7 +73,7 @@ const EditarVenta = (props) => {
 
         try{      
             
-            const response = await fetch(`https://node-express-latiz.herokuapp.com/sales/${props.match.params.id}`,{
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/sales/delete${props.match.params.id}`,{
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',
