@@ -61,6 +61,31 @@ const EditarUsuario = (props) => {
     
     }
 
+    const deleteUser = async (e) => {
+
+        e.preventDefault();
+
+        try{      
+            
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/usuarios/delete/${props.match.params.id}`,{
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+            })
+
+            await response.json()
+
+            toast.info('Usuario actualizado con éxito!')
+
+        }catch(e){
+            toast.error('Lo sentimos el servidor no esta disponible')
+            console.log(e)
+        }
+    
+    }
+
     
     return (
         <div>
@@ -89,7 +114,7 @@ const EditarUsuario = (props) => {
 
                     <div className="editarProducto">
                         <button className="buttonAdd" name='buttonEdit' onClick={updateUsuario}>Guardar cambios</button>
-                        
+                        <button className="buttonAdd" onClick={deleteUser} >Eliminar usuario</button>
                     </div>
                 
                 </div>

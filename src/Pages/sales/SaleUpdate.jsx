@@ -59,7 +59,7 @@ const EditarVenta = (props) => {
 
             await response.json()
 
-            toast.info('Todo melo!')
+            toast.info('Venta actualizada con éxito!')
 
         }catch(e){
             toast.error('Lo sentimos el servidor no esta disponible')
@@ -83,7 +83,7 @@ const EditarVenta = (props) => {
 
             await response.json()
 
-            toast.info('Todo melo!')
+            toast.info('Venta actualizada con éxito!')
 
         }catch(e){
             toast.error('Lo sentimos el servidor no esta disponible')
