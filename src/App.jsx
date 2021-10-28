@@ -12,25 +12,29 @@ import ActualizarProducto from "./Pages/products/Update";
 import MaestroUsuarios from "./Pages/users/Master";
 import ActualizarUsuario from "./Pages/users/Update";
 import './App.css';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 
 function App() {
   return (
+    <Auth0Provider
+    domain="dev-55qtikdp.us.auth0.com"
+    clientId="gtjukzUT5LVQ8aWB9sMkj0pwPC3kjrgv"
+    redirectUri={window.location.origin}
+    audience="api-autenticacion-latiz"> 
     <>
       <Router>
         <Switch>
-          <Route path={['/sales/saleAdd', '/sales/saleMaster', '/sales/saleUpdate']}>
+          <Route path={['/sales/add', '/sales/master', '/sales/update']}>
             <PrivateLayout>
               <Switch>
-                <Route path='/sales/saleAdd'>
+                <Route path='/sales/add'>
                   <AgregarVenta />
                 </Route>
-                <Route path='/sales/saleMaster'>
+                <Route path='/sales/master'>
                   <MaestroVenta />
                 </Route>
-                <Route path='/sales/saleUpdate'>
-                  <EditarVenta />
-                </Route>
+                <Route path='/sales/update/:id' component={EditarVenta} />
               </Switch>
             </PrivateLayout>
           </Route>
@@ -43,9 +47,7 @@ function App() {
                 <Route path='/product/master'>
                   <MaestroProductos />
                 </Route>
-                <Route path='/product/update'>
-                  <ActualizarProducto />
-                </Route>
+                <Route path='/product/update/:id' component={ActualizarProducto} />
               </Switch>
             </PrivateLayout>
           </Route>
@@ -55,9 +57,7 @@ function App() {
                 <Route path='/user/master'>
                   <MaestroUsuarios />
                 </Route>
-                <Route path='/user/update'>
-                  <ActualizarUsuario />
-                </Route>
+                <Route path='/user/update/:id' component={ActualizarUsuario} />
               </Switch>
             </PrivateLayout>
           </Route>
@@ -69,6 +69,7 @@ function App() {
         </Switch>
       </Router>
     </>
+    </Auth0Provider>
   );
 }
 

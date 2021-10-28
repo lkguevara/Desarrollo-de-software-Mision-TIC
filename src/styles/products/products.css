@@ -60,11 +60,36 @@
   margin: 0;
 }
 
+.maestroProducto {
+  /* display: flex;
+  flex-direction: column; */
+  border-collapse: collapse;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
+}
 
-/* .listSalerow{
-  margin: 60px;
+.maestroProducto td{
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
 
-} */
+.cabeceraTabla{
+  background-color: #015c6169;
+}
+
+.maestroProducto tr:nth-child(even){background-color: #f2f2f2;}
+
+
+.maestroProducto th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
 
 
 /* Maestro venta */
@@ -81,6 +106,8 @@
 
 .RegisterSale p{
   margin: 5px 0;
+  display: flex;
+  justify-content: space-between
 }
 .optionFilter{
   border-radius: 5px;
@@ -179,6 +206,11 @@ button {
   
 }
 
+.editarProducto{
+  display: flex;
+  justify-content:space-between;
+}
+
 .buttonAdd {
   background: #318161;
   border: 1px solid var(--main-color);
@@ -191,6 +223,19 @@ button {
   margin: auto;
   margin-top: 25px;
   
+}
+
+.buttonVenta{
+  background: #142E38;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  color: white;
+  padding: 7px;
+  cursor: pointer;
+  width: 10%;
+  align-items: center;
+  margin: auto;
+  text-align: center;
 }
 
 .buttonAdd p{
@@ -254,6 +299,14 @@ button {
     padding:20px;
     flex-wrap: wrap;
   } 
+
+  .addProduct > form{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
   
   .addProduct input{
     border-radius: 10px;

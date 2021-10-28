@@ -1,72 +1,130 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react';
 import "../../styles/Ventas/Sales.css"
 import "../../styles/Ventas/text.css"
 import RutaNav from "../../components/Ventas/Route"
-import SalesList from "../../components/Ventas/SalesList"
-import Edit from "../../images/Ventas/edit.svg"
-import Delete from "../../images/Ventas/delete.svg"
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const EditarVenta = () => {
+
+const EditarUsuario = (props) => {
+    const [usuario, setusuario] = useState({})
+    useEffect(() => {
+
+        try{
+            const fetchData = async () => {
+                const response = await fetch(`https://node-express-latiz.herokuapp.com/users/${props.match.params.id}`)
+                const data = await response.json()
+                
+                console.log(data)
+
+                if(data !== null){
+                    setusuario(data)
+                }
+            }
+    
+            fetchData()
+        }catch(e){
+            toast.error('Lo siento tenemos un error, vuelve mas tarde')
+        }
+    }, [])
+
+
+    const changeForm = (e)=>{
+        setusuario({...usuario,[e.target.name]:e.target.value})
+
+    }
+    
+
+    const updateUsuario = async (e) => {
+
+        e.preventDefault();
+
+        try{      
+            
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/users/edit/${props.match.params.id}`,{
+                method: 'PATCH',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usuario)
+            })
+
+            await response.json()
+
+            toast.info('Todo melo!')
+
+        }catch(e){
+            toast.error('Lo sentimos el servidor no esta disponible')
+        }
+    
+    }
+
+    const deleteUser = async (e) => {
+
+        e.preventDefault();
+
+        try{      
+            
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/users/delete/${props.match.params.id}`,{
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+            })
+
+            await response.json()
+
+            toast.info('Usuario actualizado con éxito!')
+
+        }catch(e){
+            toast.error('Lo sentimos el servidor no esta disponible')
+            console.log(e)
+        }
+    
+    }
+
+    
     return (
         <div>
-           <RutaNav route="/ Editar Usuario"/>
+           <RutaNav route="/ Editar usuario"/>
            <div className="AddProduct">
                 <Link to="/user/master">
-                    <p>Maestro Usaurios</p>
+                    <p>Maestro usuarios</p>
                 </Link>
             </div>
-            <input className="search" placeholder='Buscar'/>
            <div className="textAddProduct">
-                <h2>Formulario para actualizar un usuario</h2>
+                <h2>Formulario para editar un usuario</h2>
            </div>
+           <ToastContainer position="bottom-center" autoClose={5000} />
 
-            <form className="listSales">
-            <div className="listSaleColum">
-                    <SalesList item="ID Usuario" date="Id de usuario"/>
-                </div>
+            {
+                Object.entries(usuario).length > 0 ?
+                <div className="addProduct">
 
-                <div className="listSaleColum">
-                    <SalesList item="Nombre" date="Nombre"/>
-                </div>
+                    <form >
+                        <input  placeholder= "Nombre" name='name' value={usuario.name} onChange={changeForm}/>  
+                        <input  placeholder= "Apellido" name='lastname' value={usuario.lastname} onChange={changeForm} /> 
+                        <input  placeholder= "Rol"  name='rol' value={usuario.rol}onChange={changeForm}  /> 
+                         
+                        
+                    </form >
 
-
-                <div className="listSaleColum">
-                    <SalesList item="Apellido" date="Apellido"/>
-                </div>
-
-                <div className="listSaleColum">
-                    <SalesList item="Rol de usuario" date="Rol"/>    
-                </div>
+                    <div className="editarProducto">
+                        <button className="buttonAdd" name='buttonEdit' onClick={updateUsuario}>Guardar cambios</button>
+                        <button className="buttonAdd" onClick={deleteUser} >Eliminar usuario</button>
+                    </div>
                 
-
-                
-
-                <div className="editSale">
-                    <Link to='./'>
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                    </Link>
                 </div>
-
-                <div className="editSale">
-                    <Link to='./'>
-                        <img src= {Delete} height="20px" alt="" />
-                        <img src= {Delete} height="20px" alt="" />
-                        <img src= {Delete} height="20px" alt="" />
-                        <img src= {Delete} height="20px" alt="" />
-                    </Link>
-                </div>
-                
-            </form>
-            <button className="buttonUpdate">
-                <p>Guardar cambios</p>
-            </button>
+                :
+                <h1 style={{margin:'150px auto', width:'90%', textAlign:'center'}}>El usuario no existe en la base de datos</h1>
+            }
+               
             
         </div>
     )
 }
 
-export default EditarVenta
+export default EditarUsuario

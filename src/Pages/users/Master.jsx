@@ -1,13 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react';
 import "../../styles/Ventas/Sales.css"
 import "../../styles/Ventas/text.css"
 import RutaNav from "../../components/Ventas/Route"
-import SalesList from "../../components/Ventas/SalesList"
 import Edit from "../../images/Ventas/edit.svg"
-import Add from "../../images/Ventas/add.svg"
 import { Link } from 'react-router-dom';
 
-const MaestroVenta = () => {
+const MaestroUsuarios = () => {
+    
+    const [usuarios,setusuarios] = useState([])
+
+    useEffect(() => {
+        
+        const fetchData = async () => {
+            const response = await fetch('https://node-express-latiz.herokuapp.com/users/')
+            const data = await response.json()
+
+            setusuarios(data)
+            console.log(data)
+        }
+
+
+
+        fetchData()
+
+    }, [])
+    
+    
+    
+    
+    
     return (
         <div>
            <RutaNav route="/ Maestro de Usuarios"/>
@@ -18,38 +39,37 @@ const MaestroVenta = () => {
            <div className="textAddProduct">
                 <h2>Lista de usuarios</h2>
            </div>
-            <form className="listSales">
-                <div className="listSaleColum">
-                    <SalesList item="ID Usuario" date="Id de usuario"/>
-                </div>
-
-                <div className="listSaleColum">
-                    <SalesList item="Nombre" date="Nombre"/>
-                </div>
+           <table className="maestroProducto">
 
 
-                <div className="listSaleColum">
-                    <SalesList item="Apellido" date="Apellido"/>
-                </div>
+                <tr className="cabeceraTabla">
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Rol</td>
+                    
+                </tr>
 
-                <div className="listSaleColum">
-                    <SalesList item="Rol de usuario" date="Rol"/>    
-                </div>
+                {
+                    usuarios.length > 0 && usuarios.map(usuario =>{
+                        return(
+                            <tr>
+                                <td>{usuario.name}</td>
+                                <td>{usuario.lastname}</td>
+                                <td>{usuario.rol}</td>
+                                <Link to = {`/user/update/${usuario._id}`}>
+                                <img src= {Edit} height="20px" alt="" />
+                                </Link>
+                                
+                            </tr>
+
+                        )
+                    })
+                }
 
 
-                <div className="editSale">
-                    <Link to='/user/update'>
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                        <img src= {Edit} height="20px" alt="" />
-                    </Link>
-                </div>
-                
-                
-            </form>
+                </table>
         </div>
     )
 }
 
-export default MaestroVenta
+export default MaestroUsuarios
