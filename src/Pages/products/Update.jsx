@@ -80,10 +80,11 @@ const EditarProducto = (props) => {
 
             await response.json()
 
-            toast.info('Todo melo!')
+            toast.info('Producto eliminado con éxito!')
 
         }catch(e){
             toast.error('Lo sentimos el servidor no esta disponible')
+            console.log(e)
         }
     
     }
