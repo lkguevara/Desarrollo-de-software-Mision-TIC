@@ -31,7 +31,7 @@ const Productos = () => {
                         "Size": unidad,
                         "price": precio}
 
-        const response = await fetch('https://latzi-nodejs.herokuapp.com/products/create',{
+        const response = await fetch('https://node-express-latiz.herokuapp.com/products/create',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

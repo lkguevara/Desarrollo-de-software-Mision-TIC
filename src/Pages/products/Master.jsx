@@ -23,7 +23,7 @@ const MaestroProdutos = () => {
         // /products/delete -> eliminar un producto (id)
 
         const fetchData = async () => {
-            const response = await fetch('https://latzi-nodejs.herokuapp.com/products')
+            const response = await fetch('https://node-express-latiz.herokuapp.com/products')
             const data = await response.json()
 
             setProductos(data)

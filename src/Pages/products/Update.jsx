@@ -15,7 +15,7 @@ const EditarProducto = (props) => {
 
         try{
             const fetchData = async () => {
-                const response = await fetch(`https://latzi-nodejs.herokuapp.com/products/${props.match.params.id}`)
+                const response = await fetch(`https://node-express-latiz.herokuapp.com/products/${props.match.params.id}`)
                 const data = await response.json()
                 
                 //si data es diferente de null -> seteear el dato del producto
@@ -45,7 +45,7 @@ const EditarProducto = (props) => {
 
         try{      
             
-            const response = await fetch(`https://latzi-nodejs.herokuapp.com/products/edit/${props.match.params.id}`,{
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/products/edit/${props.match.params.id}`,{
                 method: 'PATCH',
                 headers: {
                     'Accept': 'application/json',
@@ -56,7 +56,7 @@ const EditarProducto = (props) => {
 
             await response.json()
 
-            toast.info('Todo melo!')
+            toast.info('Producto eliminado con éxito!')
 
         }catch(e){
             toast.error('Lo sentimos el servidor no esta disponible')
@@ -70,7 +70,7 @@ const EditarProducto = (props) => {
 
         try{      
             
-            const response = await fetch(`https://latzi-nodejs.herokuapp.com/products/delete/${props.match.params.id}`,{
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/products/delete/${props.match.params.id}`,{
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',
