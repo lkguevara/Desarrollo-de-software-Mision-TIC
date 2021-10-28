@@ -12,7 +12,7 @@ const MaestroUsuarios = () => {
     useEffect(() => {
         
         const fetchData = async () => {
-            const response = await fetch('https://latzi-nodejs.herokuapp.com/usuarios')
+            const response = await fetch('https://node-express-latiz.herokuapp.com/users/')
             const data = await response.json()
 
             setusuarios(data)

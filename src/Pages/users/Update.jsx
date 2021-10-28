@@ -13,7 +13,7 @@ const EditarUsuario = (props) => {
 
         try{
             const fetchData = async () => {
-                const response = await fetch(`https://latzi-nodejs.herokuapp.com/usuarios/${props.match.params.id}`)
+                const response = await fetch(`https://node-express-latiz.herokuapp.com/users/${props.match.params.id}`)
                 const data = await response.json()
                 
                 console.log(data)
@@ -42,7 +42,7 @@ const EditarUsuario = (props) => {
 
         try{      
             
-            const response = await fetch(`https://latzi-nodejs.herokuapp.com/usuarios/${props.match.params.id}`,{
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/users/edit/${props.match.params.id}`,{
                 method: 'PATCH',
                 headers: {
                     'Accept': 'application/json',
@@ -67,7 +67,7 @@ const EditarUsuario = (props) => {
 
         try{      
             
-            const response = await fetch(`https://node-express-latiz.herokuapp.com/usuarios/delete/${props.match.params.id}`,{
+            const response = await fetch(`https://node-express-latiz.herokuapp.com/users/delete/${props.match.params.id}`,{
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',
