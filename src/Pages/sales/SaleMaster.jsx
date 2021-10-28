@@ -14,7 +14,7 @@ const MaestroVenta = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://latzi-nodejs.herokuapp.com/ventas')
+            const response = await fetch('https://node-express-latiz.herokuapp.com/sales')
             const data = await response.json()
 
             setVentas(data)
